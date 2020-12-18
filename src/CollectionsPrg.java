@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class CollectionsPrg {
     public static void main(String[] args) {
@@ -43,6 +44,10 @@ public class CollectionsPrg {
         System.out.println(list2);
 
         List<String> countries=Arrays.asList("India","US","China","France");
+
+        List<String> newList=countries.stream().filter(country->!"China".equals(country))
+                .collect(Collectors.toList());
+        System.out.println("New List: "+newList);
 
     }
 }
